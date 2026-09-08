@@ -135,3 +135,87 @@ Apply static typing using TypeScript to define the core domain structures of the
 ## Time Invested
 
 - Approximately 2 hours. 1 40 aprox
+
+_______________________________________________________
+
+# Daily Report - Day 3
+
+## Objective of the Day
+
+Understand the structure and responsibility of an Angular component by creating standalone components and implementing basic component interaction.
+
+## Activities Performed
+
+- Created the Header component.
+- Created the Footer component.
+- Created the Home component.
+- Configured standalone component imports.
+- Displayed the system title using interpolation.
+- Displayed a simulated user name.
+- Implemented a button to show and hide a section.
+- Implemented event binding for user interaction.
+- Implemented property binding to control visibility.
+- Composed the application using reusable components.
+
+## Concepts Applied
+
+- Component decorator.
+- Selector.
+- Template.
+- Stylesheet.
+- Standalone components.
+- Interpolation.
+- Property binding.
+- Event binding.
+- Component composition.
+
+## Functional Evidence
+
+- Header component successfully implemented.
+- Footer component successfully implemented.
+- System title displayed through interpolation.
+- Simulated user displayed on screen.
+- Section visibility controlled through user interaction.
+- Application successfully composed using standalone components.
+
+**Screenshot:**
+
+![](./public/Activity_3_evidence.png)
+
+## Tests Performed
+
+- Verified application rendering.
+- Tested component composition.
+- Verified interpolation functionality.
+- Tested property binding behavior.
+- Tested event binding functionality.
+- Verified show/hide interaction.
+
+## Issues Encountered
+
+- Defining a scalable structure for reusable and feature-specific components.
+- Determining the appropriate placement for layout-related components.
+
+## Solutions Applied
+
+- Placed Header and Footer components inside the shared module because they are reusable across multiple features.
+- Kept page-specific functionality inside the Home feature.
+- Used standalone components to simplify dependency management.
+
+## Technical Decisions
+
+- Used standalone components for all new components.
+- Separated reusable layout components from feature-specific functionality.
+- Managed component events directly from TypeScript.
+- Avoided complex logic inside templates.
+
+## Pending Work
+
+- Create additional feature components.
+- Implement routing.
+- Start building incident-related screens.
+- Continue applying Angular component best practices.
+
+## Time Invested
+
+- Approximately 2 hours.
