@@ -1,0 +1,96 @@
+:host {
+    display: block;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+h1 {
+    margin-bottom: 2rem;
+    color: #0f172a;
+}
+
+.incident-grid {
+    display: grid;
+    gap: 1rem;
+    max-height: 70dvh;
+    overflow-y: scroll;
+
+    scrollbar-width: thin;
+    scrollbar-color: #94a3b8 transparent;
+}
+
+.incident-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.08);
+
+    transition: transform 0.2s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status,
+.priority {
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.open {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.progress {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.resolved {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.closed {
+    background: #e2e8f0;
+    color: #475569;
+}
+
+.low {
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+.medium {
+    background: #fef9c3;
+    color: #854d0e;
+}
+
+.high {
+    background: #fde68a;
+    color: #92400e;
+}
+
+.critical {
+    background: #fecaca;
+    color: #991b1b;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3rem;
+    border-radius: 16px;
+    background: white;
+    color: #64748b;
+}

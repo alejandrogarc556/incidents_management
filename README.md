@@ -219,3 +219,107 @@ Understand the structure and responsibility of an Angular component by creating 
 ## Time Invested
 
 - Approximately 2 hours.
+
+________________________________________________________
+
+# Daily Report - Day 4
+
+## Objective of the Day
+
+Render dynamic incident data using Angular's modern control flow syntax and improve the visual presentation of the application through responsive layouts and custom styling.
+
+## Activities Performed
+
+- Created the Incident List component.
+- Implemented incident rendering using the `@for` directive.
+- Configured a stable tracking expression using `track incident.id`.
+- Implemented conditional rendering with `@if` and `@else`.
+- Added an empty state using the `@empty` directive.
+- Implemented status visualization using the `@switch` directive.
+- Added visual indicators for incident priorities.
+- Integrated mock incident data into the component.
+- Added a custom scrollbar for the incident list container.
+- Implemented a modern card-based layout for displaying incidents.
+- Created and executed component tests.
+- Configured zoneless testing support using `provideZonelessChangeDetection()`.
+
+## Concepts Applied
+
+- Angular Control Flow.
+- `@for`.
+- `@if`.
+- `@else`.
+- `@empty`.
+- `@switch`.
+- Tracking expressions.
+- Conditional rendering.
+- Standalone components.
+- Component testing.
+- Zoneless Change Detection.
+- SCSS styling.
+- Responsive layouts.
+
+## Functional Evidence
+
+- Dynamic incident list successfully rendered from mock data.
+- Incident statuses displayed using the `@switch` directive.
+- Incident priorities visually differentiated through custom styles.
+- Empty state successfully implemented.
+- Stable tracking configured using incident identifiers.
+- Modern card-based interface implemented.
+- Custom scrollbar successfully applied.
+- Component tests executed successfully.
+
+**Screenshot:**
+
+![](./public/Activity_4_evidence.png)
+
+## Tests Performed
+
+- Verified successful rendering of the incident list.
+- Verified incident tracking using `track incident.id`.
+- Validated status and priority visualization.
+- Verified empty state rendering.
+- Executed component creation tests.
+- Verified mock data loading.
+- Verified incident collection size.
+- Verified existence of open incidents.
+- Verified existence of critical incidents.
+
+## Issues Encountered
+
+- Scroll behavior was not working as expected due to container sizing constraints.
+- Component tests failed because Angular zoneless configuration was not provided during TestBed initialization.
+- Determining the most appropriate layout structure for displaying larger incident collections.
+
+## Solutions Applied
+
+- Added proper height constraints and overflow configuration to the incident container.
+- Configured `provideZonelessChangeDetection()` inside the testing module.
+- Implemented a scrollable card-based layout to improve usability.
+- Added a custom-styled scrollbar to provide a more polished user experience.
+
+## Technical Decisions
+
+- Used Angular's modern control flow syntax instead of legacy structural directives.
+- Used `track incident.id` to provide stable item tracking.
+- Kept incident-related functionality inside the incidents feature module.
+- Reused mock data from previous activities to maintain consistency.
+- Applied SCSS component encapsulation for styling.
+- Maintained a zoneless Angular application architecture.
+
+## Pending Work
+
+- Implement application routing.
+- Create incident detail views.
+- Add filtering and search capabilities.
+- Introduce Angular services for data management.
+- Begin API integration preparation.
+
+## Time Invested
+
+- Approximately 3 hours.
+
+## Related Commits
+
+- feat(day-4): implement modern angular control flow and incident dashboard

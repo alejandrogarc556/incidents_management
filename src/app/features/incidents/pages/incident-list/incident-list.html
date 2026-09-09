@@ -1,0 +1,87 @@
+<h1>Incident Dashboard</h1>
+
+@if (incidents.length > 0) {
+
+<div class="incident-grid">
+
+    @for (incident of incidents; track incident.id) {
+
+    <div class="incident-card">
+
+        <div class="card-header">
+
+            <h3>{{ incident.title }}</h3>
+
+            @switch (incident.status) {
+
+            @case ('OPEN') {
+            <span class="status open">
+                Open
+            </span>
+            }
+
+            @case ('IN_PROGRESS') {
+            <span class="status progress">
+                In Progress
+            </span>
+            }
+
+            @case ('RESOLVED') {
+            <span class="status resolved">
+                Resolved
+            </span>
+            }
+
+            @default {
+            <span class="status closed">
+                Closed
+            </span>
+            }
+
+            }
+
+        </div>
+
+        <p>
+            {{ incident.description }}
+        </p>
+
+        @switch (incident.priority) {
+
+        @case ('LOW') {
+        <span class="priority low">Low</span>
+        }
+
+        @case ('MEDIUM') {
+        <span class="priority medium">Medium</span>
+        }
+
+        @case ('HIGH') {
+        <span class="priority high">High</span>
+        }
+
+        @default {
+        <span class="priority critical">Critical</span>
+        }
+
+        }
+
+    </div>
+
+    } @empty {
+
+    <div class="empty-state">
+        No incidents available.
+    </div>
+
+    }
+
+</div>
+
+} @else {
+
+<div class="empty-state">
+    No incidents available.
+</div>
+
+}

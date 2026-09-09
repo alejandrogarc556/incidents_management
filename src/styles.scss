@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+/* Chrome, Edge y Opera */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #64748b;
+    background-clip: content-box;
+}
