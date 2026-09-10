@@ -9,13 +9,4 @@ import { IncidentListComponent } from "../../../incidents/pages/incident-list/in
 })
 export class HomeComponent {
 
-  title: string = 'Incident Management System';
-
-  currentUser: string = 'John Gualteros';
-
-  showDetails: boolean = true;
-
-  toggleDetails(): void {
-    this.showDetails = !this.showDetails;
-  }
 }

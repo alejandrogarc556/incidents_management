@@ -320,6 +320,107 @@ Render dynamic incident data using Angular's modern control flow syntax and impr
 
 - Approximately 3 hours.
 
-## Related Commits
+____________________________________________________________
 
-- feat(day-4): implement modern angular control flow and incident dashboard
+# Daily Report - Day 5
+
+## Objective of the Day
+
+Implement parent-child communication using Angular's modern component APIs while applying separation of responsibilities between container and presentation components.
+
+## Activities Performed
+
+- Created the IncidentCardComponent.
+- Implemented a required input using `input.required()`.
+- Implemented output events using `output()`.
+- Added incident selection functionality.
+- Added incident deletion functionality.
+- Configured event emission from child to parent components.
+- Moved incident presentation logic into a reusable card component.
+- Kept incident collection management inside the container component.
+- Refactored the incident list to render reusable incident cards.
+- Implemented a selected incident indicator.
+- Added action buttons for incident selection and removal.
+- Added a user avatar to the application header.
+- Implemented dynamic user initials generation using a TypeScript getter.
+- Enhanced the header layout with a modern dashboard-style design.
+
+## Concepts Applied
+
+- Parent-child communication.
+- Required inputs.
+- Outputs.
+- Event emission.
+- Container components.
+- Presentational components.
+- Component reusability.
+- Data immutability.
+- Getter accessors.
+- Component composition.
+- Standalone components.
+- SCSS styling.
+
+## Functional Evidence
+
+- IncidentCardComponent successfully created as a reusable presentation component.
+- Parent component successfully manages the incident collection.
+- Child component emits selection events.
+- Child component emits deletion events.
+- Selected incidents are correctly identified by the container component.
+- Incidents can be removed from the collection through event communication.
+- User avatar successfully displays generated initials.
+- Header component enhanced with user information and avatar visualization.
+- Application structure follows container and presentational component separation.
+
+**Screenshot:**
+
+![](./public/Activity_5_evidence.png)
+
+## Tests Performed
+
+- Verified required input binding.
+- Verified output event emission.
+- Verified parent-child communication flow.
+- Verified incident selection functionality.
+- Verified incident deletion functionality.
+- Verified collection updates after deletion.
+- Verified selected incident tracking.
+- Verified avatar initials generation.
+- Verified reusable card rendering.
+
+## Issues Encountered
+
+- Determining the correct responsibility boundaries between the parent and child components.
+- Preserving the visual logic implemented during Day 4 while introducing component communication.
+- Designing a reusable card component without exposing collection management responsibilities.
+
+## Solutions Applied
+
+- Moved incident visualization logic into the IncidentCardComponent.
+- Kept collection mutations exclusively inside the container component.
+- Implemented outputs for selection and deletion actions.
+- Preserved status and priority visualization within the presentation component.
+- Implemented a getter accessor to calculate avatar initials from the current user name.
+
+## Technical Decisions
+
+- Used `input.required()` instead of the traditional `@Input()` decorator.
+- Used `output()` instead of the traditional `@Output()` decorator.
+- Followed Angular's container/presentation component pattern.
+- Prevented the child component from mutating input data directly.
+- Kept state management inside the parent component.
+- Reused Day 4 card styling within the new reusable component.
+- Implemented avatar initials generation through a getter due to its simplicity and low computational cost.
+
+## Pending Work
+
+- Implement application routing.
+- Create incident detail views.
+- Add filtering capabilities.
+- Introduce Angular services for state management.
+- Continue improving component reusability.
+- Prepare the application for API integration.
+
+## Time Invested
+
+- Approximately 2 hours 30 mins.

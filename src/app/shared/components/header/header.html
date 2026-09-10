@@ -1,3 +1,19 @@
-<header>
-    <h2>Incident Management System</h2>
+<header class="header">
+    <div class="header-brand">
+        <h2>{{ title }}</h2>
+    </div>
+
+    <div class="user-section">
+        <div class="user-info">
+            <span class="user-name">
+                {{ currentUser() }}
+            </span>
+
+            <span class="user-role"> Administrator </span>
+        </div>
+
+        <div class="avatar">
+            {{ currentUserInitials() }}
+        </div>
+    </div>
 </header>

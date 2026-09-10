@@ -19,73 +19,6 @@ h1 {
     scrollbar-color: #94a3b8 transparent;
 }
 
-.incident-card {
-    background: white;
-    border-radius: 16px;
-    padding: 1.5rem;
-    box-shadow:
-        0 4px 10px rgba(0, 0, 0, 0.08);
-
-    transition: transform 0.2s ease;
-
-    &:hover {
-        transform: translateY(-2px);
-    }
-}
-
-.card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.status,
-.priority {
-    padding: 0.35rem 0.8rem;
-    border-radius: 999px;
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-
-.open {
-    background: #fee2e2;
-    color: #b91c1c;
-}
-
-.progress {
-    background: #fef3c7;
-    color: #b45309;
-}
-
-.resolved {
-    background: #dcfce7;
-    color: #15803d;
-}
-
-.closed {
-    background: #e2e8f0;
-    color: #475569;
-}
-
-.low {
-    background: #e0f2fe;
-    color: #0369a1;
-}
-
-.medium {
-    background: #fef9c3;
-    color: #854d0e;
-}
-
-.high {
-    background: #fde68a;
-    color: #92400e;
-}
-
-.critical {
-    background: #fecaca;
-    color: #991b1b;
-}
 
 .empty-state {
     text-align: center;
@@ -93,4 +26,13 @@ h1 {
     border-radius: 16px;
     background: white;
     color: #64748b;
+}
+
+.selected-banner {
+    padding: 16px;
+    border: 1px solid rgb(83, 191, 253);
+    background-color: rgb(182, 228, 255);
+    border-radius: 8px;
+    color: #0f172a;
+    font-weight: bold;
 }

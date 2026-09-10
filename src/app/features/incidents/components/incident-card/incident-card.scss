@@ -1,0 +1,125 @@
+.incident-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+
+        box-shadow:
+            0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.card-header h3 {
+    margin: 0;
+}
+
+.category {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.actions {
+    margin-top: 1.25rem;
+
+    display: flex;
+    gap: 0.75rem;
+}
+
+.actions button {
+    cursor: pointer;
+
+    border: none;
+
+    padding:
+        0.65rem
+        1rem;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.select-btn {
+    background: #3b82f6;
+    color: white;
+
+    &:hover {
+        background: #2563eb;
+    }
+}
+
+.delete-btn {
+    background: #ef4444;
+    color: white;
+
+    &:hover {
+        background: #dc2626;
+    }
+}
+
+.status,
+.priority {
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.open {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.progress {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.resolved {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.closed {
+    background: #e2e8f0;
+    color: #475569;
+}
+
+.low {
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+.medium {
+    background: #fef9c3;
+    color: #854d0e;
+}
+
+.high {
+    background: #fde68a;
+    color: #92400e;
+}
+
+.critical {
+    background: #fecaca;
+    color: #991b1b;
+}

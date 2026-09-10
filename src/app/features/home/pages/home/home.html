@@ -1,17 +1,3 @@
 <main>
-    <h1>{{ title }}</h1>
-    
-    <p>Current User: {{ currentUser }}</p>
-    
-    <button (click)="toggleDetails()">
-        Show / Hide Section
-    </button>
-    
-    <div class="showable" [hidden]="!showDetails">
-        <p>
-            This section can be shown or hidden using Angular bindings.
-        </p>
-    </div>
-
     <app-incident-list />
 </main>
