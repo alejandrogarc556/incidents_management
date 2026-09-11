@@ -424,3 +424,112 @@ Implement parent-child communication using Angular's modern component APIs while
 ## Time Invested
 
 - Approximately 2 hours 30 mins.
+
+________________________________________________________________________________
+
+# Daily Report - Day 6
+
+## Objective of the Day
+
+Improve the application's visual design, responsiveness, and accessibility by applying modern UI principles, reusable styling conventions, and responsive layouts.
+
+## Activities Performed
+
+- Defined global CSS variables for colors, spacing, shadows, and border radius.
+- Refactored component styling to use a centralized design system.
+- Improved the visual hierarchy of the dashboard interface.
+- Redesigned incident cards using a more modern and minimalist appearance.
+- Refined status and priority indicators using softer color palettes.
+- Enhanced the header component with a cleaner user profile section.
+- Improved avatar presentation and user information display.
+- Created a responsive card grid using CSS Grid.
+- Added responsive behavior for mobile devices.
+- Implemented hover states for interactive elements.
+- Implemented focus states for keyboard accessibility.
+- Implemented disabled states for interactive controls.
+- Improved card alignment and visual consistency across different content lengths.
+- Standardized spacing and typography throughout the application.
+- Reduced visual noise by simplifying button styling and color usage.
+
+## Concepts Applied
+
+- CSS Variables.
+- Component Style Encapsulation.
+- CSS Grid.
+- Flexbox.
+- Responsive Design.
+- Mobile-first Adaptation.
+- Visual Hierarchy.
+- Accessibility.
+- Focus States.
+- Hover States.
+- Disabled States.
+- Design System Principles.
+- Semantic Styling.
+
+## Functional Evidence
+
+- Responsive incident dashboard successfully implemented.
+- Consistent design system applied across all components.
+- Incident cards display with improved visual hierarchy.
+- Responsive grid adapts correctly to different screen sizes.
+- Keyboard focus indicators successfully implemented.
+- Interactive elements provide visual feedback through hover and focus states.
+- Card alignment improved for incidents with varying description lengths.
+- Header component enhanced with a cleaner and more professional appearance.
+- User avatar integrated into the overall visual system.
+
+**Screenshot:**
+
+![](./public/Activity_6_evidence.png)
+
+## Tests Performed
+
+- Verified responsive behavior on desktop resolution.
+- Verified responsive behavior on mobile resolution.
+- Tested keyboard navigation using focus states.
+- Tested button hover interactions.
+- Verified disabled state styling.
+- Validated card alignment consistency.
+- Verified incident grid responsiveness.
+- Confirmed accessibility improvements for interactive controls.
+
+## Issues Encountered
+
+- Cards displayed inconsistent heights due to different content lengths.
+- Initial design appeared visually overloaded with excessive color emphasis.
+- Achieving a balance between visual appeal and usability required several design iterations.
+- Maintaining consistency between reusable components after style refactoring.
+
+## Solutions Applied
+
+- Applied flexible card layouts to improve visual consistency.
+- Introduced a unified design system through CSS variables.
+- Reduced color saturation and emphasized neutral tones.
+- Improved spacing and typography to strengthen visual hierarchy.
+- Implemented responsive grid behavior for different screen sizes.
+- Added accessibility-focused interaction states for buttons and controls.
+
+## Technical Decisions
+
+- Centralized design tokens using CSS variables.
+- Applied a minimalist visual approach inspired by modern SaaS dashboards.
+- Used CSS Grid for responsive card layouts.
+- Used Flexbox for component-level alignment.
+- Preserved component style encapsulation.
+- Implemented accessibility improvements without introducing external UI libraries.
+- Prioritized consistency and readability over decorative styling.
+- Maintained a lightweight styling approach using native SCSS features.
+
+## Pending Work
+
+- Implement Angular routing.
+- Create incident detail views.
+- Add filtering and search capabilities.
+- Introduce service-based data management.
+- Improve accessibility with ARIA attributes where appropriate.
+- Continue refining the overall user experience.
+
+## Time Invested
+
+- Approximately 1 hour 30 mins.

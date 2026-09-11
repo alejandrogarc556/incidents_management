@@ -1,38 +1,44 @@
 :host {
     display: block;
     padding: 2rem;
-    min-height: 100vh;
 }
 
 h1 {
-    margin-bottom: 2rem;
-    color: #0f172a;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.selected-banner {
+    margin-bottom: 1rem;
+    padding: 0.9rem 1rem;
+    border-radius: 12px;
+    background: #eef2ff;
+    color: #4338ca;
+    border: 1px solid #c7d2fe;
 }
 
 .incident-grid {
     display: grid;
-    gap: 1rem;
-    max-height: 70dvh;
-    overflow-y: scroll;
-
-    scrollbar-width: thin;
-    scrollbar-color: #94a3b8 transparent;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1.25rem;
+    align-items: stretch;
 }
-
 
 .empty-state {
-    text-align: center;
-    padding: 3rem;
-    border-radius: 16px;
     background: white;
-    color: #64748b;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 3rem;
+    text-align: center;
+    color: var(--text-secondary);
 }
 
-.selected-banner {
-    padding: 16px;
-    border: 1px solid rgb(83, 191, 253);
-    background-color: rgb(182, 228, 255);
-    border-radius: 8px;
-    color: #0f172a;
-    font-weight: bold;
+@media (max-width: 768px) {
+    :host {
+        padding: 1rem;
+    }
+
+    .incident-grid {
+        grid-template-columns: 1fr;
+    }
 }
