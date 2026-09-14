@@ -1,19 +1,24 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { IncidentCardComponent } from './incident-card';
+import { provideZonelessChangeDetection } from '@angular/core';
+import { MOCK_INCIDENTS } from '../../mocks/mock-incidents';
 
-import { IncidentCard } from './incident-card';
 
 describe('IncidentCard', () => {
-  let component: IncidentCard;
-  let fixture: ComponentFixture<IncidentCard>;
+  let component: IncidentCardComponent;
+  let fixture: ComponentFixture<IncidentCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [IncidentCard]
-    })
-    .compileComponents();
+      imports: [IncidentCardComponent],
+      providers: [
+        provideZonelessChangeDetection()
+      ]
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(IncidentCard);
+    fixture = TestBed.createComponent(IncidentCardComponent);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('incident', MOCK_INCIDENTS[0]);
     fixture.detectChanges();
   });
 
