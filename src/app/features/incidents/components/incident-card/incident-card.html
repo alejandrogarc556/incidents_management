@@ -1,37 +1,26 @@
 <div class="incident-card">
-
     <div class="card-header">
-
-        <h3>{{ incident().title }}</h3>
+        <h3>
+            {{ incident().title | titlecase }}
+        </h3>
 
         @switch (incident().status) {
-
         @case ('OPEN') {
-        <span class="status open">
-            Open
-        </span>
+        <span class="status open"> Open </span>
         }
 
         @case ('IN_PROGRESS') {
-        <span class="status progress">
-            In Progress
-        </span>
+        <span class="status progress"> In Progress </span>
         }
 
         @case ('RESOLVED') {
-        <span class="status resolved">
-            Resolved
-        </span>
+        <span class="status resolved"> Resolved </span>
         }
 
         @default {
-        <span class="status closed">
-            Closed
-        </span>
+        <span class="status closed"> Closed </span>
         }
-
         }
-
     </div>
 
     <p>
@@ -39,51 +28,47 @@
     </p>
 
     @switch (incident().priority) {
-
     @case ('LOW') {
     <span class="priority low">
-        Low
+        {{ incident().priority | priorityLabel }}
     </span>
     }
 
     @case ('MEDIUM') {
     <span class="priority medium">
-        Medium
+        {{ incident().priority | priorityLabel }}
     </span>
     }
 
     @case ('HIGH') {
     <span class="priority high">
-        High
+        {{ incident().priority | priorityLabel }}
     </span>
     }
 
     @default {
     <span class="priority critical">
-        Critical
+        {{ incident().priority | priorityLabel }}
     </span>
     }
-
     }
 
     <p class="category">
-        {{ incident().category }}
+        {{ incident().category | uppercase }}
+    </p>
+
+    <p class="created-date">
+        Created:
+        {{ incident().createdAt | date: 'MMM d, yyyy' }}
+    </p>
+
+    <p class="relative-date">
+        {{ incident().createdAt | relativeTime }}
     </p>
 
     <div class="actions">
+        <button class="select-btn" (click)="selectIncident()">Select</button>
 
-        <button class="select-btn" (click)="selectIncident()">
-
-            Select
-
-        </button>
-
-        <button class="delete-btn" (click)="removeIncident()">
-
-            Delete
-
-        </button>
-
+        <button class="delete-btn" (click)="removeIncident()">Delete</button>
     </div>
-
 </div>

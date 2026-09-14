@@ -533,3 +533,124 @@ Improve the application's visual design, responsiveness, and accessibility by ap
 ## Time Invested
 
 - Approximately 1 hour 30 mins.
+
+_________________________________________________________________________________________________
+
+# Daily Report - Day 7
+
+## Objective of the Day
+
+Apply Angular built-in pipes and custom pipes to improve data presentation while keeping domain models immutable and maintaining a clear separation between business data and UI formatting concerns.
+
+## Activities Performed
+
+- Applied the `TitleCasePipe` to incident titles.
+- Applied the `UpperCasePipe` to incident categories.
+- Applied the `DatePipe` to creation dates.
+- Created the `RelativeTimePipe` custom pipe.
+- Implemented relative date formatting for incident creation dates.
+- Created the `PriorityLabelPipe` custom pipe.
+- Implemented readable priority labels for incident priorities.
+- Integrated built-in and custom pipes into the IncidentCard component.
+- Maintained incident models without introducing presentation-specific data.
+- Verified that transformations were performed exclusively through pipes.
+- Created an initial unit test for the `RelativeTimePipe`.
+- Reviewed Angular pipe purity concepts.
+- Fixed a failing component test caused by a required input initialization issue.
+- Configured required component inputs using `fixture.componentRef.setInput()`.
+- Added zoneless test support through `provideZonelessChangeDetection()`.
+- Validated successful component rendering after input assignment.
+
+## Concepts Applied
+
+- Built-in Pipes.
+- Custom Pipes.
+- Pure Pipes.
+- Pipe Transformations.
+- Date Pipe.
+- Title Case Pipe.
+- Upper Case Pipe.
+- Presentation Layer Responsibilities.
+- Reusable Transformations.
+- Data Immutability.
+- Unit Testing.
+- Component Testing.
+- Zoneless Change Detection.
+- Required Inputs.
+- TestBed Configuration.
+
+## Functional Evidence
+
+- Incident titles are displayed using title case formatting.
+- Incident categories are displayed in uppercase format.
+- Creation dates are displayed using Angular's built-in Date Pipe.
+- Relative time information is displayed through a reusable custom pipe.
+- Priority values are transformed into readable labels through a custom pipe.
+- Original incident data remains unchanged after presentation transformations.
+- Custom pipes are reusable and independent from business logic.
+- Pipe transformations successfully improve UI readability.
+- IncidentCard component tests execute successfully after required input initialization.
+- Zoneless Angular test configuration works correctly during component testing.
+
+**Screenshot:**
+
+![](./public/Activity_7_evidence.png)
+
+## Tests Performed
+
+- Verified successful creation of the `RelativeTimePipe`.
+- Verified date transformation into relative labels.
+- Verified handling of valid pipe inputs.
+- Verified handling of undefined pipe inputs.
+- Verified consistent pipe output for valid dates.
+- Verified IncidentCard component creation.
+- Verified required input assignment using mock incident data.
+- Verified component rendering after input assignment.
+- Verified zoneless testing configuration.
+- Verified Angular TestBed initialization.
+- Verified successful execution of component tests.
+
+## Issues Encountered
+
+- Determining the most appropriate relative date representation.
+- Selecting meaningful transformations without modifying business objects.
+- IncidentCard tests failed because the required input was not initialized before component rendering.
+- Angular zoneless testing required additional configuration during TestBed setup.
+
+## Solutions Applied
+
+- Created a reusable `RelativeTimePipe` for relative date calculations.
+- Created a reusable `PriorityLabelPipe` for readable priority labels.
+- Kept presentation logic inside pipes rather than inside components.
+- Initialized component inputs through `fixture.componentRef.setInput()`.
+- Added `provideZonelessChangeDetection()` to the testing module configuration.
+- Maintained all transformations as presentation-only operations.
+
+## Technical Decisions
+
+- Used built-in Angular pipes whenever an existing solution was available.
+- Implemented custom pipes only for application-specific requirements.
+- Maintained pipe purity and side-effect-free transformations.
+- Kept presentation concerns outside business entities.
+- Reused custom pipes through the shared layer.
+- Preserved immutability of incident models.
+- Continued using a zoneless Angular architecture across the application and testing environment.
+- Used Angular's modern required input pattern together with explicit input assignment during unit tests.
+
+## Pending Work
+
+- Implement Angular routing.
+- Create incident detail views.
+- Add filtering and search functionality.
+- Introduce service-based data management.
+- Expand unit test coverage for custom pipes.
+- Expand component testing coverage.
+- Continue improving application maintainability through reusable utilities.
+
+## Time Invested
+
+- Approximately 2 hours.
+
+## Related Commits
+
+- test(day-7): add pipe unit tests and fix IncidentCard zoneless configuration

@@ -1,11 +1,20 @@
 import { Component, input, output } from '@angular/core';
 import { Incident } from '../../models/incident.model';
+import { PriorityLabelPipe } from '../../../../shared/pipes/priority-label.pipe.ts-pipe';
+import { RelativeTimePipe } from '../../../../shared/pipes/relative-time.pipe.ts-pipe';
+import { DatePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-incident-card',
   templateUrl: './incident-card.html',
   styleUrl: './incident-card.scss',
-  imports: []
+  imports: [
+    PriorityLabelPipe,
+    RelativeTimePipe,
+    TitleCasePipe,
+    DatePipe,
+    UpperCasePipe
+  ]
 })
 export class IncidentCardComponent {
 
