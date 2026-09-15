@@ -3,6 +3,8 @@ import { Incident } from '../../models/incident.model';
 import { PriorityLabelPipe } from '../../../../shared/pipes/priority-label.pipe.ts-pipe';
 import { RelativeTimePipe } from '../../../../shared/pipes/relative-time.pipe.ts-pipe';
 import { DatePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
+import { HighlightCriticalDirective } from '../../../../shared/directives/highlight-critical.directive';
+import { FocusStyleDirective } from '../../../../shared/directives/focus-style.directive';
 
 @Component({
   selector: 'app-incident-card',
@@ -13,7 +15,9 @@ import { DatePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
     RelativeTimePipe,
     TitleCasePipe,
     DatePipe,
-    UpperCasePipe
+    UpperCasePipe,
+    HighlightCriticalDirective,
+    FocusStyleDirective
   ]
 })
 export class IncidentCardComponent {

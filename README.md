@@ -654,3 +654,122 @@ Apply Angular built-in pipes and custom pipes to improve data presentation while
 ## Related Commits
 
 - test(day-7): add pipe unit tests and fix IncidentCard zoneless configuration
+
+___________________________________________________________________________________________________
+
+# Daily Report - Day 8
+
+## Objective of the Day
+
+Create reusable custom directives to encapsulate UI behavior, apply consistent interactions across components, and improve maintainability through reusable attribute directives.
+
+## Activities Performed
+
+- Created the `HighlightCriticalDirective`.
+- Created the `FocusStyleDirective`.
+- Implemented custom attribute directives.
+- Applied dependency injection within directives.
+- Used `ElementRef` for element access.
+- Used `Renderer2` for safe DOM manipulation.
+- Implemented conditional styling for critical incidents.
+- Applied visual highlighting to critical incidents.
+- Implemented focus visualization through directive logic.
+- Used `HostBinding` to dynamically update element styles.
+- Used `HostListener` to react to focus and blur events.
+- Applied directives to reusable incident card components.
+- Applied directives to interactive buttons.
+- Ensured directive behavior works with keyboard navigation.
+- Created unit tests for both directives.
+- Configured zoneless testing support for directive tests.
+- Refined directive tests to validate actual behavior instead of only class existence.
+- Debugged Angular input binding issues in directive tests.
+- Resolved testing issues related to Angular's zoneless configuration.
+
+## Concepts Applied
+
+- Attribute Directives.
+- Reusable Behaviors.
+- Dependency Injection.
+- Renderer2.
+- ElementRef.
+- HostBinding.
+- HostListener.
+- Safe DOM Manipulation.
+- Keyboard Accessibility.
+- Focus Management.
+- Conditional Styling.
+- Unit Testing.
+- Standalone Directives.
+- Zoneless Testing.
+- TestBed Configuration.
+
+## Functional Evidence
+
+- Critical incidents are visually highlighted through a reusable directive.
+- Focus styles are automatically applied when interactive elements receive keyboard focus.
+- Directive logic is independent from specific components.
+- The same directive can be reused across multiple UI elements.
+- Incident cards visually indicate critical priority levels.
+- Focus behavior improves accessibility and keyboard navigation.
+- Directive functionality is successfully covered by unit tests.
+- Application behavior remains consistent with Angular's zoneless architecture.
+
+**Screenshot:**
+
+![](./public/Activity_8_evidence.png)
+
+## Tests Performed
+
+- Verified critical incidents receive visual highlighting.
+- Verified non-critical incidents do not receive highlight styling.
+- Verified critical incident box shadow styling.
+- Verified focus state activation.
+- Verified focus state removal on blur.
+- Verified transition styling configuration.
+- Verified directive initialization within host components.
+- Verified directive behavior under zoneless Angular testing.
+- Verified HostBinding updates element styles correctly.
+- Verified HostListener responds to focus and blur events.
+
+## Issues Encountered
+
+- Angular zoneless testing configuration was missing from directive tests.
+- Directive input bindings were initially misconfigured.
+- Browser style normalization produced different CSS values than expected during assertions.
+- Test scenarios required separate host components to validate different directive states.
+- Angular generated expression change errors when modifying test values after initialization.
+
+## Solutions Applied
+
+- Added `provideZonelessChangeDetection()` to directive test configurations.
+- Refactored tests to use dedicated host components for different scenarios.
+- Adjusted assertions to validate effective style changes rather than browser-specific CSS strings.
+- Corrected directive input bindings to align with Angular's modern input API.
+- Maintained safe element manipulation through `Renderer2`.
+- Isolated directive behavior from component-specific implementations.
+
+## Technical Decisions
+
+- Used attribute directives to encapsulate reusable UI behaviors.
+- Used `Renderer2` instead of direct DOM manipulation.
+- Used `HostBinding` for declarative style management.
+- Used `HostListener` to react to browser events.
+- Kept directives independent from application-specific components.
+- Applied directive logic through reusable selectors.
+- Continued using Angular's zoneless architecture.
+- Implemented behavior-oriented tests rather than existence-only validation.
+- Maintained separation between UI behavior and component business logic.
+
+## Pending Work
+
+- Implement Angular routing.
+- Create incident detail pages.
+- Add filtering and search functionality.
+- Introduce services for state management.
+- Expand directive test coverage.
+- Continue improving application accessibility.
+- Prepare the application for data persistence and API integration.
+
+## Time Invested
+
+- Approximately 2 hours and 30 minutes.

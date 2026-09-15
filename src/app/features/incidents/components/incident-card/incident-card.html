@@ -1,4 +1,7 @@
-<div class="incident-card">
+<div class="incident-card"
+    appHighlightCritical
+    [appHighlightCritical]="incident().priority"
+>
     <div class="card-header">
         <h3>
             {{ incident().title | titlecase }}
@@ -67,8 +70,12 @@
     </p>
 
     <div class="actions">
-        <button class="select-btn" (click)="selectIncident()">Select</button>
+        <button class="select-btn"
+            appFocusStyle
+            (click)="selectIncident()">Select</button>
 
-        <button class="delete-btn" (click)="removeIncident()">Delete</button>
+        <button class="delete-btn" 
+            appFocusStyle
+            (click)="removeIncident()">Delete</button>
     </div>
 </div>
