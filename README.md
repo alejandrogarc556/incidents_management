@@ -773,3 +773,113 @@ Create reusable custom directives to encapsulate UI behavior, apply consistent i
 ## Time Invested
 
 - Approximately 2 hours and 30 minutes.
+
+
+________________________________________________________________________________
+
+# Daily Report - Day 9
+
+## Objective of the Day
+
+Centralize application data access through Angular services and understand dependency injection by moving incident management responsibilities outside of the component layer.
+
+## Activities Performed
+
+- Created the `IncidentService`.
+- Configured the service using `@Injectable()`.
+- Registered the service using `providedIn: 'root'`.
+- Moved mock incident data access from components into the service layer.
+- Implemented incident retrieval functionality.
+- Implemented incident search by identifier.
+- Implemented incident creation functionality.
+- Implemented incident deletion functionality.
+- Encapsulated the incident collection within the service.
+- Prevented direct component access to the internal collection.
+- Implemented defensive copy returns using array cloning.
+- Refactored `IncidentListComponent` to use dependency injection.
+- Removed direct dependencies on mock data from components.
+- Updated incident selection and deletion flows to use service operations.
+- Created unit tests for `IncidentService`.
+- Created documentation describing the service responsibilities.
+
+## Concepts Applied
+
+- Services.
+- Dependency Injection.
+- Injectable Services.
+- Singleton Services.
+- Separation of Concerns.
+- Encapsulation.
+- Data Management.
+- State Protection.
+- Defensive Copies.
+- Unit Testing.
+- TestBed.
+- Service Layer Pattern.
+- Component-Service Communication.
+
+## Functional Evidence
+
+- Incident management logic was successfully moved into a dedicated service.
+- Components no longer depend directly on mock data collections.
+- The service acts as the single source of truth for incident data.
+- Incident retrieval, creation, and deletion operations are centralized.
+- Internal service state remains protected from external modification.
+- Components communicate exclusively through the service layer.
+- IncidentListComponent successfully loads data using dependency injection.
+- Service operations correctly update the application state.
+- Unit tests validate service behavior and data protection mechanisms.
+
+## Tests Performed
+
+- Verified service creation.
+- Verified retrieval of all incidents.
+- Verified retrieval of incidents by identifier.
+- Verified handling of non-existing incident identifiers.
+- Verified incident creation functionality.
+- Verified incident deletion functionality.
+- Verified behavior when deleting non-existing incidents.
+- Verified defensive copy implementation.
+- Verified that modifying returned collections does not affect the internal service state.
+- Verified service integration with Angular TestBed.
+
+## Issues Encountered
+
+- Determining the correct ownership of application data between components and services.
+- Preventing components from modifying the internal incident collection.
+- Ensuring all data operations remained centralized after the refactor.
+- Designing service methods that exposed behavior while protecting state.
+
+## Solutions Applied
+
+- Introduced `IncidentService` as the centralized data management layer.
+- Moved all collection operations out of the component layer.
+- Marked the internal collection as private.
+- Implemented defensive copies when returning collections.
+- Injected the service into consuming components using Angular dependency injection.
+- Consolidated incident operations into reusable service methods.
+
+## Technical Decisions
+
+- Used a singleton service with `providedIn: 'root'`.
+- Stored the incident collection as a private field.
+- Returned defensive copies instead of direct collection references.
+- Kept business data operations inside the service layer.
+- Eliminated direct component dependencies on mock data sources.
+- Applied dependency injection instead of manual instantiation.
+- Created unit tests focused on service behavior rather than implementation details.
+- Maintained separation between presentation logic and data management responsibilities.
+
+## Pending Work
+
+- Implement Angular routing.
+- Create incident detail pages.
+- Add filtering and search capabilities.
+- Introduce asynchronous data retrieval patterns.
+- Prepare the service layer for HTTP integration.
+- Expand test coverage for service interactions.
+- Continue evolving the application architecture toward a production-ready structure.
+
+## Time Invested
+
+- Approximately 1 hour 30 mins.
