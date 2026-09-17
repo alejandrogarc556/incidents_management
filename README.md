@@ -883,3 +883,123 @@ Centralize application data access through Angular services and understand depen
 ## Time Invested
 
 - Approximately 1 hour 30 mins.
+
+___________________________________________________________________________
+# Daily Report - Day 10
+
+## Objective of the Day
+
+Manage local application state using Angular Signals and Computed Signals while applying immutable state updates and reactive UI patterns.
+
+## Activities Performed
+
+- Converted the incident collection into a Signal.
+- Replaced traditional component state management with Angular Signals.
+- Created a readonly Signal for incident access.
+- Implemented a Signal for the search term.
+- Implemented a Signal for priority filtering.
+- Created a `computed` signal for the total number of incidents.
+- Created a `computed` signal for critical incidents.
+- Created a `computed` signal for open incidents.
+- Created a `computed` signal for filtered incidents.
+- Implemented reactive search functionality.
+- Implemented reactive filtering by title and description.
+- Updated the incident list component to consume Signal-based state.
+- Added dashboard indicators for total, critical, and open incidents.
+- Removed direct collection management from the component.
+- Refactored create and delete operations to update state immutably.
+- Avoided direct array mutations by using Signal update operations.
+- Extended service unit tests to validate Signal and Computed behavior.
+- Documented when `computed` should be used instead of `effect`.
+
+## Concepts Applied
+
+- Signals.
+- Writable Signals.
+- Readonly Signals.
+- Computed Signals.
+- Reactive State Management.
+- Derived State.
+- Immutable Updates.
+- State Encapsulation.
+- Signal Updates.
+- Dependency Tracking.
+- Computed Derivations.
+- Service-Based State Management.
+- Unit Testing.
+- Reactive UI Updates.
+
+## Functional Evidence
+
+- Incident collection is managed through Angular Signals.
+- Search functionality updates the UI reactively.
+- Filtered incident results update automatically when the search term changes.
+- Dashboard statistics update automatically when incidents are modified.
+- Total incident count is derived through a computed signal.
+- Critical incident count is derived through a computed signal.
+- Open incident count is derived through a computed signal.
+- Filtering logic reacts automatically to state changes.
+- Components consume readonly state instead of directly modifying collections.
+- Application state remains immutable during create and delete operations.
+
+**Screenshot:**
+
+![](./public/Activity_10_evidence.png)
+
+## Tests Performed
+
+- Verified service creation.
+- Verified access to incident data through readonly Signals.
+- Verified total incident calculation through a computed signal.
+- Verified critical incident calculation through a computed signal.
+- Verified open incident calculation through a computed signal.
+- Verified retrieval of incidents by identifier.
+- Verified handling of non-existing identifiers.
+- Verified incident creation updates state correctly.
+- Verified incident deletion updates state correctly.
+- Verified search term filtering.
+- Verified reactive updates when the search term changes.
+- Verified filtered incident calculations.
+- Verified service integration through Angular TestBed.
+
+## Issues Encountered
+
+- Existing component tests referenced the old incident collection property after the migration to Signals.
+- Previous tests assumed direct access to component collections instead of service-managed state.
+- Reactive filtering tests initially relied on dataset sizes rather than validating state changes.
+- Service refactoring required updating component responsibilities.
+
+## Solutions Applied
+
+- Replaced direct collection access with Signal-based service access.
+- Updated component tests to validate service state instead of local component state.
+- Refactored filtering tests to compare actual filtered results rather than collection counts.
+- Implemented readonly Signals to prevent unintended state mutations.
+- Used immutable update operations through Signal APIs.
+
+## Technical Decisions
+
+- Used Signals as the primary state management mechanism.
+- Kept incident state centralized inside the service layer.
+- Exposed readonly Signals instead of writable Signals.
+- Used `computed` for all derived values.
+- Avoided storing values that can be derived from existing state.
+- Avoided using `effect` for computed calculations.
+- Maintained immutable state updates through Signal update operations.
+- Preserved separation of concerns between components and services.
+- Extended existing service tests to validate reactive state behavior.
+
+## Pending Work
+
+- Implement Angular routing.
+- Create incident detail pages.
+- Add advanced filtering options.
+- Introduce asynchronous data retrieval.
+- Prepare the service for HTTP integration.
+- Expand Signal-based test coverage.
+- Continue evolving the application toward a production-ready architecture.
+
+## Time Invested
+
+- Approximately 3 hours.
+

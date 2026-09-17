@@ -33,6 +33,42 @@ h1 {
     color: var(--text-secondary);
 }
 
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.stat-card span {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.stat-card strong {
+    font-size: 2rem;
+    color: var(--text-primary);
+}
+
+input {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    padding: 0.9rem 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background: white;
+}
+
 @media (max-width: 768px) {
     :host {
         padding: 1rem;

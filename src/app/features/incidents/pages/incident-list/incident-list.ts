@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Incident } from '../../models/incident.model';
+import { Component } from '@angular/core';
+
 import { IncidentCardComponent } from '../../components/incident-card/incident-card';
+
 import { IncidentService } from '../../services/incident.service';
 
 @Component({
@@ -9,18 +10,10 @@ import { IncidentService } from '../../services/incident.service';
     templateUrl: './incident-list.html',
     styleUrl: './incident-list.scss',
 })
-export class IncidentListComponent implements OnInit {
-    incidents: Incident[] = [];
-
+export class IncidentListComponent {
     selectedIncidentId: number | null = null;
 
-    constructor(
-        private readonly incidentService: IncidentService
-    ) { }
-
-    ngOnInit(): void {
-        this.incidents = this.incidentService.getAll();
-    }
+    constructor(public readonly incidentService: IncidentService) { }
 
     onIncidentSelected(id: number): void {
         this.selectedIncidentId = id;
@@ -28,8 +21,6 @@ export class IncidentListComponent implements OnInit {
 
     onIncidentRemoved(id: number): void {
         this.incidentService.delete(id);
-
-        this.incidents = this.incidentService.getAll();
 
         if (this.selectedIncidentId === id) {
             this.selectedIncidentId = null;

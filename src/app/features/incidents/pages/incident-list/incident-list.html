@@ -1,40 +1,45 @@
 <h1>Incident Dashboard</h1>
 
-@if (selectedIncidentId !== null) {
+<div class="stats">
+    <div class="stat-card">
+        <span>Total Incidents</span>
 
-<div class="selected-banner">
+        <strong>
+            {{ incidentService.totalIncidents() }}
+        </strong>
+    </div>
 
-    Selected Incident:
-    #{{ selectedIncidentId }}
+    <div class="stat-card">
+        <span>Critical Incidents</span>
 
+        <strong>
+            {{ incidentService.criticalIncidents() }}
+        </strong>
+    </div>
+
+    <div class="stat-card">
+        <span>Open Incidents</span>
+
+        <strong>
+            {{ incidentService.openIncidents() }}
+        </strong>
+    </div>
 </div>
 
+<input type="text" placeholder="Search incidents..." #search (input)="incidentService.searchTerm.set(search.value)" />
+
+@if (selectedIncidentId !== null) {
+<div class="selected-banner">Selected Incident: #{{ selectedIncidentId }}</div>
 }
 
-@if (incidents.length > 0) {
-
+@if (incidentService.filteredIncidents().length > 0) {
 <div class="incident-grid">
-
-    @for (
-    incident of incidents;
-    track incident.id
-    ) {
-
+    @for (incident of incidentService.filteredIncidents(); track incident.id) {
     <app-incident-card [incident]="incident" (selected)="onIncidentSelected($event)"
         (removed)="onIncidentRemoved($event)">
-
     </app-incident-card>
-
     }
-
 </div>
-
 } @else {
-
-<div class="empty-state">
-
-    No incidents available.
-
-</div>
-
+<div class="empty-state">No incidents available.</div>
 }
