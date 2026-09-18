@@ -1003,3 +1003,120 @@ Manage local application state using Angular Signals and Computed Signals while 
 
 - Approximately 3 hours.
 
+___________________________________________________________________
+
+# Daily Report - Day 11
+
+## Objective of the Day
+
+Create a typed reactive form to register incidents while applying Angular Reactive Forms, validation rules, and form state management best practices.
+
+## Activities Performed
+
+- Created the `IncidentFormComponent`.
+- Integrated Angular Reactive Forms into the incidents feature.
+- Created a typed reactive form using `FormBuilder`.
+- Added form controls for title, description, category, and priority.
+- Implemented required field validation.
+- Implemented minimum length validation for title.
+- Implemented minimum length validation for description.
+- Added validation messages for invalid fields.
+- Configured validation messages to appear after user interaction.
+- Disabled form submission when validation rules are not satisfied.
+- Implemented incident registration functionality.
+- Connected the form to the `IncidentService`.
+- Reused existing Signal-based state management from Day 10.
+- Registered incidents through the centralized service layer.
+- Created new incidents using immutable state updates.
+- Automatically refreshed the incident dashboard after registration.
+- Reset the form after a successful submission.
+- Added unit tests for the reactive form component.
+
+## Concepts Applied
+
+- Reactive Forms.
+- Typed Forms.
+- FormBuilder.
+- FormGroup.
+- FormControl.
+- Validators.
+- Form Validation.
+- Form State Management.
+- Touch State.
+- Dirty State.
+- Dependency Injection.
+- Service Integration.
+- Signals.
+- Immutable Updates.
+- Component Testing.
+
+## Functional Evidence
+
+- The application provides a fully functional reactive incident registration form.
+- Users can create incidents using typed form controls.
+- Validation errors are displayed when fields are invalid.
+- Form submission is automatically disabled while the form is invalid.
+- New incidents are added through the Signal-based service layer.
+- Dashboard statistics update automatically after incident creation.
+- Newly created incidents immediately appear in the incident list.
+- Form data is cleared after a successful registration.
+- Incident creation uses centralized business logic through the service layer.
+
+**Screenshot:**
+
+![](./public/Activity_11_evidence.png)
+
+## Tests Performed
+
+- Verified component creation.
+- Verified form initialization.
+- Verified form starts in an invalid state.
+- Verified required field validation.
+- Verified title minimum length validation.
+- Verified description minimum length validation.
+- Verified form becomes valid when all fields are completed.
+- Verified submit button remains disabled for invalid forms.
+- Verified successful incident registration.
+- Verified form reset after successful submission.
+- Verified IncidentService integration.
+
+## Issues Encountered
+
+- Determining where form validation logic should be located.
+- Ensuring validation messages only appear after user interaction.
+- Integrating reactive forms with the Signal-based architecture implemented during Day 10.
+- Preventing invalid incident creation while maintaining a good user experience.
+
+## Solutions Applied
+
+- Used Angular Validators to centralize validation rules.
+- Displayed error messages only after the corresponding control was touched.
+- Connected form submission to the IncidentService.
+- Reused Signal-based state updates for automatic UI refresh.
+- Reset the form after successful registration to improve usability.
+- Kept business logic outside of the component whenever possible.
+
+## Technical Decisions
+
+- Used Reactive Forms instead of Template-Driven Forms.
+- Used typed forms through `FormBuilder.nonNullable`.
+- Centralized incident creation through the IncidentService.
+- Reused existing Signal state management instead of introducing duplicate state.
+- Applied validation rules directly within the form configuration.
+- Maintained separation between form presentation and data management responsibilities.
+- Preserved immutable updates through Signal APIs.
+- Prevented form submission when validation requirements are not satisfied.
+
+## Pending Work
+
+- Implement Angular routing.
+- Create incident detail pages.
+- Add advanced filtering capabilities.
+- Introduce editing functionality for existing incidents.
+- Prepare service methods for HTTP integration.
+- Expand form test coverage.
+- Continue improving the overall user experience.
+
+## Time Invested
+
+- Approximately 3 hours.
