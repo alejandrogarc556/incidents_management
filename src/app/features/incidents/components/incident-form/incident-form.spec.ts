@@ -31,6 +31,7 @@ describe('IncidentFormComponent', () => {
             description: 'Users cannot connect to VPN',
             category: 'NETWORK',
             priority: 'HIGH',
+            tags: []
         });
         expect(component.form.valid).toBeTrue();
     });

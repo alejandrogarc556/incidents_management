@@ -1120,3 +1120,119 @@ Create a typed reactive form to register incidents while applying Angular Reacti
 ## Time Invested
 
 - Approximately 3 hours.
+
+____________________________________________________________________________
+
+# Daily Report - Day 12
+
+## Objective of the Day
+
+Enhance the reactive incident form by implementing custom validators and dynamic form controls while applying reusable validation logic and advanced Angular Reactive Forms features.
+
+## Activities Performed
+
+- Created the `noWhitespaceValidator` custom validator.
+- Implemented validation to prevent titles composed only of whitespace characters.
+- Created the `restrictedWordsValidator` custom validator.
+- Implemented validation for restricted words within incident titles.
+- Added reusable validation logic to the shared layer.
+- Integrated custom validators into the incident registration form.
+- Extended the reactive form to support dynamic tags.
+- Implemented tag management using `FormArray`.
+- Added functionality to dynamically create tags.
+- Added functionality to remove tags.
+- Implemented validation to prevent duplicate tags.
+- Implemented validation to limit the number of tags.
+- Added validation feedback for custom validation errors.
+- Enhanced the user experience with improved tag styling.
+- Updated the form component to manage dynamic collections.
+- Created unit tests for custom validators.
+- Extended form validation coverage through testing.
+
+## Concepts Applied
+
+- Custom Validators.
+- ValidatorFn.
+- ValidationErrors.
+- Reactive Forms.
+- Typed Forms.
+- FormArray.
+- Dynamic Form Controls.
+- Reusable Validation Logic.
+- FormBuilder.
+- Dependency Injection.
+- Form State Management.
+- Unit Testing.
+- Input Validation.
+- Data Integrity.
+
+## Functional Evidence
+
+- Incident titles cannot contain only whitespace characters.
+- Restricted words are detected and blocked through custom validation logic.
+- Dynamic tags can be added to incidents.
+- Tags can be removed dynamically.
+- Duplicate tags are prevented.
+- Tag collection size is limited according to business rules.
+- Validation messages are displayed for custom validators.
+- Incident registration remains connected to Signal-based state management.
+- Dynamic tags are fully integrated into the incident creation workflow.
+- Validator logic is reusable across future forms.
+
+**Screenshot:**
+
+![](./public/Activity_12_evidence.png)
+
+## Tests Performed
+
+- Verified whitespace-only titles are rejected.
+- Verified valid titles pass whitespace validation.
+- Verified restricted words are detected correctly.
+- Verified valid titles pass restricted word validation.
+- Verified tags can be added dynamically.
+- Verified duplicate tags are rejected.
+- Verified tag limits are enforced.
+- Verified tags can be removed successfully.
+- Verified form validity updates correctly when validation rules change.
+- Verified custom validator integration within the reactive form.
+
+## Issues Encountered
+
+- Defining reusable validation logic without coupling validators to a specific component.
+- Managing dynamic collections while keeping the form strongly typed.
+- Preventing duplicated tags without introducing unnecessary complexity.
+- Ensuring custom validation messages remained clear and user friendly.
+
+## Solutions Applied
+
+- Implemented reusable validator functions using `ValidatorFn`.
+- Moved validation logic into the shared layer to maximize reusability.
+- Used `FormArray` to support dynamic tag collections.
+- Added duplicate detection before inserting new tags.
+- Added a maximum tag limit to enforce business constraints.
+- Extended validation feedback to handle custom validation scenarios.
+
+## Technical Decisions
+
+- Used custom validators instead of component-level validation logic.
+- Kept validation rules reusable and independent from the form component.
+- Chose `FormArray` as the appropriate mechanism for dynamic collections.
+- Prevented duplicate tags through form-level business validation.
+- Applied tag limits through component validation logic.
+- Continued using typed reactive forms.
+- Preserved separation between validation, presentation, and state management concerns.
+- Maintained compatibility with the Signal-based architecture introduced in previous activities.
+
+## Pending Work
+
+- Implement Angular routing.
+- Create incident detail pages.
+- Add advanced filtering capabilities.
+- Introduce incident editing functionality.
+- Prepare data access for HTTP integration.
+- Expand test coverage for dynamic form interactions.
+- Continue improving form usability and validation feedback.
+
+## Time Invested
+
+- Approximately 3 hours.

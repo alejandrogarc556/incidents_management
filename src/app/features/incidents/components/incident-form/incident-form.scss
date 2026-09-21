@@ -43,3 +43,75 @@ button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
 }
+
+.tag-input {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.tag-input input {
+    flex: 1;
+}
+
+.tag-input button {
+    min-width: 90px;
+    background: #0f172a;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0.85rem 1rem;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+.tag-input button:hover {
+    background: #1e293b;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.9rem;
+    border-radius: 999px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #334155;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: 0.15s ease;
+}
+
+.tag:hover {
+    border-color: #cbd5e1;
+    background: #f1f5f9;
+}
+
+.tag button {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: #64748b;
+    cursor: pointer;
+    padding: 0;
+    transition: 0.15s ease;
+}
+
+.tag button:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+}
