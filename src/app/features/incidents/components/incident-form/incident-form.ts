@@ -1,21 +1,22 @@
 import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { IncidentService } from '../../services/incident.service';
 import { MOCK_USERS } from '../../mocks/mock-users';
-import { restrictedWordsValidator } from '../../../../shared/validators/restricted-words.validator';
+import { IncidentService } from '../../services/incident.service';
 import { noWhitespaceValidator } from '../../../../shared/validators/no-whitespace.validator';
+import { restrictedWordsValidator } from '../../../../shared/validators/restricted-words.validator';
 
 @Component({
     selector: 'app-incident-form',
+    standalone: true,
     imports: [ReactiveFormsModule],
     templateUrl: './incident-form.html',
     styleUrl: './incident-form.scss',
 })
 export class IncidentFormComponent {
+    private readonly router = inject(Router);
     private readonly fb = inject(FormBuilder);
-
     private readonly incidentService = inject(IncidentService);
-
     readonly form = this.fb.nonNullable.group({
         title: [
             '',
@@ -48,7 +49,7 @@ export class IncidentFormComponent {
         }
 
         const duplicate = this.tags.controls.some(
-            (control) => control?.value && control?.value?.toLowerCase() === tag.toLowerCase(),
+            (control) => control && control?.value && control?.value?.toLowerCase() === tag.toLowerCase(),
         );
 
         if (duplicate) {
@@ -69,9 +70,9 @@ export class IncidentFormComponent {
     submit(): void {
         if (this.form.invalid) {
             this.form.markAllAsTouched();
+
             return;
         }
-
         const value = this.form.getRawValue();
 
         this.incidentService.create({
@@ -84,7 +85,8 @@ export class IncidentFormComponent {
             createdAt: new Date(),
             createdBy: MOCK_USERS[0],
         });
-
         this.form.reset();
+        this.tags.clear();
+        this.router.navigate(['/incidents']);
     }
 }

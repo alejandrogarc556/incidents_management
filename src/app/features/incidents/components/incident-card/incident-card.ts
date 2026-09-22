@@ -1,10 +1,11 @@
-import { Component, input, output } from '@angular/core';
+import { Component, inject, input, output } from '@angular/core';
 import { Incident } from '../../models/incident.model';
 import { PriorityLabelPipe } from '../../../../shared/pipes/priority-label.pipe.ts-pipe';
 import { RelativeTimePipe } from '../../../../shared/pipes/relative-time.pipe.ts-pipe';
 import { DatePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { HighlightCriticalDirective } from '../../../../shared/directives/highlight-critical.directive';
 import { FocusStyleDirective } from '../../../../shared/directives/focus-style.directive';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-incident-card',
@@ -22,14 +23,16 @@ import { FocusStyleDirective } from '../../../../shared/directives/focus-style.d
 })
 export class IncidentCardComponent {
 
+  private readonly router = inject(Router);
   incident = input.required<Incident>();
-
   selected = output<number>();
-
   removed = output<number>();
 
   selectIncident(): void {
     this.selected.emit(this.incident().id);
+    this.router.navigate(
+      ['/incidents', this.incident().id]
+    );
   }
 
   removeIncident(): void {

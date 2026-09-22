@@ -1236,3 +1236,129 @@ Enhance the reactive incident form by implementing custom validators and dynamic
 ## Time Invested
 
 - Approximately 3 hours.
+__________________________________________________________________________________
+# Daily Report - Day 13
+
+## Objective of the Day
+
+Implement application routing using Angular Router while enabling navigation between pages, supporting route parameters, handling unknown routes, and improving the overall application structure.
+
+## Activities Performed
+
+- Configured Angular Router for the application.
+- Created the main application route configuration.
+- Implemented the default route redirection.
+- Created the `/dashboard` route.
+- Created the `/incidents` route.
+- Created the `/incidents/new` route.
+- Created the `/incidents/:id` route.
+- Created the wildcard route for unknown URLs.
+- Created the Dashboard page component.
+- Created the Incident Detail page component.
+- Created the Not Found page component.
+- Implemented route parameter retrieval using `ActivatedRoute`.
+- Added a `RouterOutlet` to the application layout.
+- Refactored the application to use page-based navigation.
+- Moved incident creation into its dedicated route.
+- Added navigation links to the application header.
+- Implemented active menu highlighting using `routerLinkActive`.
+- Added programmatic navigation after incident creation.
+- Redirected users back to the incident list after successful registration.
+- Improved the dashboard user interface.
+- Designed a custom 404 page with navigation back to the dashboard.
+- Enhanced the application header to behave as a real navigation menu.
+
+## Concepts Applied
+
+- Angular Router.
+- Route Configuration.
+- Route Parameters.
+- RouterLink.
+- RouterLinkActive.
+- RouterOutlet.
+- Programmatic Navigation.
+- ActivatedRoute.
+- Wildcard Routes.
+- Route Redirection.
+- Page Components.
+- Navigation Architecture.
+- Standalone Components.
+- Client-Side Routing.
+- User Experience Design.
+
+## Functional Evidence
+
+- Navigation between application pages works correctly.
+- Users can access the dashboard through its dedicated route.
+- Users can navigate to the incident list.
+- Users can access the incident creation page.
+- Incident detail pages receive route parameters successfully.
+- Programmatic navigation executes after incident creation.
+- Unknown application routes redirect users to the custom 404 page.
+- Active navigation menu items are visually highlighted.
+- RouterOutlet dynamically renders the selected page component.
+- The application structure now follows a page-based navigation model.
+
+**Screenshot:**
+
+![](./public/Activity_13_evidence.png)
+
+## Tests Performed
+
+- Verified navigation to the dashboard page.
+- Verified navigation to the incidents page.
+- Verified navigation to the incident creation page.
+- Verified navigation to an incident detail route.
+- Verified route parameter retrieval using `ActivatedRoute`.
+- Verified programmatic navigation after form submission.
+- Verified active menu highlighting.
+- Verified RouterOutlet rendering.
+- Verified wildcard routing behavior.
+- Verified custom 404 page rendering.
+- Verified default route redirection.
+
+## Issues Encountered
+
+- Existing application structure was based on a single-page layout and required refactoring.
+- Header navigation initially lacked active route indication.
+- Route parameter handling required understanding Angular's routing APIs.
+- Programmatic navigation needed integration with the existing reactive form workflow.
+- New pages required additional styling to maintain UI consistency.
+
+## Solutions Applied
+
+- Introduced Angular Router as the primary navigation mechanism.
+- Added route-specific page components.
+- Implemented route redirection for the default application entry point.
+- Used `RouterLink` for declarative navigation.
+- Used `RouterLinkActive` to highlight the active section.
+- Used `ActivatedRoute` to retrieve route parameters.
+- Added programmatic navigation using Angular's `Router`.
+- Designed a user-friendly 404 page to handle invalid routes.
+
+## Technical Decisions
+
+- Adopted a page-based architecture using Angular Router.
+- Configured standalone pages for routing targets.
+- Used route parameters instead of query parameters for incident details.
+- Centralized navigation through the application header.
+- Used client-side routing instead of conditional rendering.
+- Kept incident creation as an independent page.
+- Implemented a wildcard route to improve user experience.
+- Preserved compatibility with the existing Signal-based state management.
+- Maintained routing responsibilities separate from business logic components.
+
+## Pending Work
+
+- Display full incident information within the detail page.
+- Connect detail pages to real incident data.
+- Implement incident editing functionality.
+- Add route guards for protected sections.
+- Prepare application modules for HTTP integration.
+- Improve dashboard metrics with real-time data.
+- Expand routing test coverage.
+
+## Time Invested
+
+- Approximately 3 hours 30 mins.
+

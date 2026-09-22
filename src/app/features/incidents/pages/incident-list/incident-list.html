@@ -1,7 +1,5 @@
 <h1>Incident Dashboard</h1>
 
-<app-incident-form />
-
 <div class="stats">
     <div class="stat-card">
         <span>Total Incidents</span>
@@ -29,10 +27,6 @@
 </div>
 
 <input type="text" placeholder="Search incidents..." #search (input)="incidentService.searchTerm.set(search.value)" />
-
-@if (selectedIncidentId !== null) {
-<div class="selected-banner">Selected Incident: #{{ selectedIncidentId }}</div>
-}
 
 @if (incidentService.filteredIncidents().length > 0) {
 <div class="incident-grid">
