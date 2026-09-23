@@ -1362,3 +1362,123 @@ Implement application routing using Angular Router while enabling navigation bet
 
 - Approximately 3 hours 30 mins.
 
+________________________________________________________________________
+
+# Daily Report - Day 14
+
+## Objective of the Day
+
+Improve the application's routing architecture by introducing lazy-loaded feature routes, nested routing, and a shared layout while optimizing the application startup process through deferred loading.
+
+## Activities Performed
+
+- Created the `MainLayoutComponent`.
+- Implemented a shared application layout.
+- Moved common application elements into a centralized layout structure.
+- Introduced nested routing using child routes.
+- Refactored the route configuration to support feature separation.
+- Moved incident-related routes into a dedicated routing file.
+- Created the `incidents.routes.ts` configuration.
+- Configured lazy loading for the incidents feature.
+- Implemented route-level code splitting.
+- Added child routes for incident details.
+- Added child routes for incident editing.
+- Refactored the application root component to use a single `RouterOutlet`.
+- Improved feature isolation through modular route definitions.
+- Updated the Incident feature routing structure.
+- Improved page organization and navigation architecture.
+- Created documentation explaining the benefits of lazy loading.
+- Verified lazy loading chunk generation during compilation.
+
+## Concepts Applied
+
+- Lazy Loading.
+- Route-Level Code Splitting.
+- Child Routes.
+- Nested Routing.
+- Angular Router.
+- RouterOutlet.
+- Route Configuration.
+- Route Separation.
+- Shared Layout Architecture.
+- Feature Routing.
+- Route Organization.
+- Deferred Loading.
+- Standalone Components.
+- Application Scalability.
+- Performance Optimization.
+
+## Functional Evidence
+
+- Incident routes are loaded only when the incident feature is accessed.
+- The application uses a shared main layout across all routed pages.
+- Incident routing logic is isolated into a dedicated routing configuration.
+- Child routes support detail and edit operations.
+- Application startup loads only required initial code.
+- Dynamic route loading works correctly through Angular Router.
+- Route navigation remains fully functional after the routing refactor.
+- RouterOutlet is used as the primary page rendering mechanism.
+- Incident routes are managed independently from the root application routes.
+- Additional JavaScript chunks are generated for lazy-loaded functionality during build execution.
+
+**Screenshot:**
+
+![](./public/Activity_14_evidence.png)
+
+## Tests Performed
+
+- Verified application startup after route refactoring.
+- Verified default route redirection.
+- Verified dashboard navigation.
+- Verified incident list navigation.
+- Verified incident creation navigation.
+- Verified incident detail navigation.
+- Verified incident edit navigation.
+- Verified lazy-loaded route activation.
+- Verified child route rendering.
+- Verified RouterOutlet rendering through the shared layout.
+- Verified wildcard routing behavior.
+- Verified successful application build generation.
+- Verified chunk generation after compilation.
+
+## Issues Encountered
+
+- Existing routes were centralized in a single configuration file and required restructuring.
+- Shared UI elements needed to remain available across all application pages after introducing lazy loading.
+- Route responsibilities needed to be separated without breaking existing navigation.
+- Nested routing introduced additional complexity in route organization.
+
+## Solutions Applied
+
+- Created a dedicated layout component to centralize shared UI elements.
+- Moved incident-specific routes into a feature routing file.
+- Implemented lazy loading using Angular's `loadChildren` API.
+- Added child routes to organize detail and edit functionality.
+- Refactored the root routing configuration to support scalable feature expansion.
+- Preserved existing navigation behavior during the migration.
+
+## Technical Decisions
+
+- Implemented lazy loading through route-based feature separation.
+- Adopted a dedicated routing file for the incidents feature.
+- Used child routes to group related functionality.
+- Centralized shared UI components inside a common layout.
+- Kept routing responsibilities separate from business logic.
+- Used standalone components throughout the routing structure.
+- Prioritized application scalability and maintainability.
+- Implemented route-level code splitting to reduce the initial bundle size.
+- Preserved compatibility with the existing Signal-based state management architecture.
+
+## Pending Work
+
+- Implement route guards for protected pages.
+- Connect incident detail pages to real application data.
+- Implement incident editing functionality.
+- Add data resolvers for route preloading.
+- Introduce asynchronous API integration.
+- Expand routing-related test coverage.
+- Continue optimizing application performance and user experience.
+
+## Time Invested
+
+- Approximately 1 hour and 30 minutes.
