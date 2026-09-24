@@ -1,34 +1,42 @@
 <section class="dashboard">
-    <div class="hero">
-        <div class="hero-content">
-            <span class="badge"> Incident Management Platform </span>
+    <h1>API Dashboard</h1>
 
-            <h1>Dashboard Overview</h1>
+    <div class="actions">
+        <button type="button" (click)="createDemo()">POST</button>
 
+        <button type="button" (click)="updateDemo()">PUT</button>
+
+        <button type="button" (click)="deleteDemo()">DELETE</button>
+    </div>
+
+    @if (loading()) {
+    <div class="loading">Loading incidents...</div>
+    }
+
+    @if (error()) {
+    <div class="error">
+        {{ error() }}
+    </div>
+    }
+
+    @if (success()) {
+    <div class="success">
+        {{ success() }}
+    </div>
+    }
+
+    @if (!loading() && !error()) {
+    <div class="dashboard-cards">
+        @for (incident of incidents(); track incident.id) {
+        <div class="dashboard-card">
+            <h3>
+                {{ incident.title }}
+            </h3>
             <p>
-                Monitor incidents, create new reports and manage operational issues from a centralized
-                workspace.
+                {{ incident.body }}
             </p>
         </div>
+        }
     </div>
-
-    <div class="dashboard-cards">
-        <div class="dashboard-card">
-            <h3>Incident Tracking</h3>
-
-            <p>Manage and monitor incidents across the platform.</p>
-        </div>
-
-        <div class="dashboard-card">
-            <h3>Operations</h3>
-
-            <p>Review critical issues and maintain system stability.</p>
-        </div>
-
-        <div class="dashboard-card">
-            <h3>Reporting</h3>
-
-            <p>Access metrics and operational visibility.</p>
-        </div>
-    </div>
+    }
 </section>

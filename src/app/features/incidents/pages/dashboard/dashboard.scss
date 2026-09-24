@@ -58,3 +58,54 @@
 .dashboard-card p {
     color: var(--text-secondary);
 }
+
+.loading {
+    padding: 1rem;
+    border-radius: 12px;
+    background: #eff6ff;
+    color: #2563eb;
+    margin-top: 1rem;
+}
+
+.error {
+    padding: 1rem;
+    border-radius: 12px;
+    background: #fef2f2;
+    color: #dc2626;
+    margin-top: 1rem;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0 2rem;
+}
+
+.actions button {
+    border: none;
+    border-radius: 12px;
+    padding: 0.8rem 1.2rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: white;
+}
+
+.actions button:nth-child(1) {
+    background: #2563eb;
+}
+
+.actions button:nth-child(2) {
+    background: #f59e0b;
+}
+
+.actions button:nth-child(3) {
+    background: #dc2626;
+}
+
+.success {
+    padding: 1rem;
+    border-radius: 12px;
+    background: #ecfdf5;
+    color: #059669;
+    margin-top: 1rem;
+}

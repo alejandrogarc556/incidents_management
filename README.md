@@ -1482,3 +1482,123 @@ Improve the application's routing architecture by introducing lazy-loaded featur
 ## Time Invested
 
 - Approximately 1 hour and 30 minutes.
+
+________________________________________________________________
+
+# Daily Report - Day 15
+
+## Objective of the Day
+
+Integrate HTTP communication into the application using Angular HttpClient while implementing CRUD operations, typed API responses, loading indicators, and error handling mechanisms.
+
+## Activities Performed
+
+- Configured Angular HttpClient support.
+- Created a dedicated HTTP access layer.
+- Refactored the IncidentService to consume data through HTTP requests.
+- Replaced in-memory data access with REST-based operations.
+- Implemented incident retrieval through HTTP GET requests.
+- Implemented incident creation through HTTP POST requests.
+- Implemented incident updates through HTTP PUT requests.
+- Implemented incident deletion through HTTP DELETE requests.
+- Added strongly typed request and response models.
+- Configured Observable-based communication.
+- Integrated asynchronous data loading into the incidents feature.
+- Implemented loading state management.
+- Displayed loading indicators during API requests.
+- Implemented request error handling.
+- Added user feedback for failed operations.
+- Updated component logic to consume asynchronous data.
+- Validated successful communication with the simulated API.
+- Improved application readiness for real backend integration.
+
+## Concepts Applied
+
+- HttpClient.
+- REST API.
+- CRUD Operations.
+- HTTP GET.
+- HTTP POST.
+- HTTP PUT.
+- HTTP DELETE.
+- Observables.
+- Asynchronous Programming.
+- Error Handling.
+- Loading States.
+- Typed Responses.
+- Data Access Layer.
+- Service Architecture.
+- Separation of Concerns.
+
+## Functional Evidence
+
+- Incident information is loaded through HTTP requests.
+- Incident creation is performed through REST endpoints.
+- Incident updates are processed through HTTP operations.
+- Incident deletion is processed through HTTP operations.
+- Loading indicators are displayed while requests are in progress.
+- Error messages are displayed when requests fail.
+- API responses are strongly typed.
+- Components consume data asynchronously.
+- Application data flow is centralized through the HTTP service layer.
+- The architecture is prepared for integration with a production backend.
+
+**Screenshot:**
+
+![](./public/Activity_15_evidence.png)
+
+## Tests Performed
+
+- Verified successful API communication.
+- Verified incident retrieval through GET requests.
+- Verified incident creation through POST requests.
+- Verified incident update through PUT requests.
+- Verified incident deletion through DELETE requests.
+- Verified loading indicator visibility during requests.
+- Verified error state rendering.
+- Verified successful Observable subscription handling.
+- Verified typed response mapping.
+- Verified component updates after successful requests.
+- Verified service integration with Angular HttpClient.
+- Verified simulated API availability.
+
+## Issues Encountered
+
+- Transitioning from synchronous in-memory data to asynchronous HTTP operations.
+- Managing UI behavior while requests were pending.
+- Handling API failures without breaking the user experience.
+- Keeping component logic clean while introducing asynchronous communication.
+
+## Solutions Applied
+
+- Created a dedicated HTTP service layer.
+- Introduced Observable-based data access patterns.
+- Added loading state tracking during requests.
+- Implemented user-friendly error handling.
+- Centralized HTTP operations inside the service layer.
+- Applied response typing to improve safety and maintainability.
+
+## Technical Decisions
+
+- Used Angular HttpClient as the primary communication mechanism.
+- Centralized all HTTP operations within the service layer.
+- Used typed interfaces for API responses.
+- Kept HTTP concerns isolated from UI components.
+- Adopted Observable-based request handling.
+- Introduced loading state management for asynchronous operations.
+- Added structured error handling for failed requests.
+- Maintained compatibility with the existing routing, form, and Signal-based architecture.
+
+## Pending Work
+
+- Implement request interceptors.
+- Add global error handling.
+- Introduce retry strategies.
+- Implement authentication and authorization.
+- Add route guards based on API permissions.
+- Integrate with a production-ready backend.
+- Expand HTTP-related test coverage.
+
+## Time Invested
+
+- Approximately 2 hours.
